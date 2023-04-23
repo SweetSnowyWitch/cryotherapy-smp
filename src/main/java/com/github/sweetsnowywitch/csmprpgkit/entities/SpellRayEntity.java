@@ -45,6 +45,7 @@ public class SpellRayEntity extends Entity {
     public static final TrackedData<Boolean> IS_GROWING = DataTracker.registerData(SpellRayEntity.class, TrackedDataHandlerRegistry.BOOLEAN);
     public static final TrackedData<Float> FADING_MAX_LEN = DataTracker.registerData(SpellRayEntity.class, TrackedDataHandlerRegistry.FLOAT);
     public static final TrackedData<Float> FADING_LENGTH = DataTracker.registerData(SpellRayEntity.class, TrackedDataHandlerRegistry.FLOAT);
+    public static final TrackedData<Byte> LUMINANCE = DataTracker.registerData(SpellRayEntity.class, TrackedDataHandlerRegistry.BYTE);
 
     public static final TrackedData<SpellCast> CAST = DataTracker.registerData(SpellRayEntity.class, SpellCast.TRACKED_HANDLER);
 
@@ -101,6 +102,7 @@ public class SpellRayEntity extends Entity {
         this.dataTracker.startTracking(CAST, SpellCast.EMPTY);
         this.dataTracker.startTracking(FADING_MAX_LEN, -1f);
         this.dataTracker.startTracking(FADING_LENGTH, -1f);
+        this.dataTracker.startTracking(LUMINANCE, (byte) 1);
     }
 
     @Override
@@ -112,6 +114,7 @@ public class SpellRayEntity extends Entity {
         this.dataTracker.set(CAST, this.cast); // sync some spell data to client
         this.dataTracker.set(FADING_MAX_LEN, nbt.getFloat("FadingMaxLen"));
         this.dataTracker.set(FADING_LENGTH, nbt.getFloat("FadingLength"));
+        this.dataTracker.set(LUMINANCE, nbt.getByte("Luminance"));
     }
 
     @Override
@@ -119,6 +122,7 @@ public class SpellRayEntity extends Entity {
         nbt.putFloat("MaxLength", this.dataTracker.get(MAX_LENGTH));
         nbt.putFloat("Length", this.dataTracker.get(LENGTH));
         nbt.putBoolean("IsGrowing", this.dataTracker.get(IS_GROWING));
+        nbt.putByte("Luminance", this.dataTracker.get(LUMINANCE));
 
         var castNBT = new NbtCompound();
         if (this.cast != null) {
@@ -221,6 +225,14 @@ public class SpellRayEntity extends Entity {
 
     public @Nullable SpellRayEntity getParent() {
         return this.parent;
+    }
+
+    public void setTotalLuminance(byte luminance) {
+        this.dataTracker.set(LUMINANCE, luminance);
+    }
+
+    public byte getLuminance() {
+        return this.dataTracker.get(LUMINANCE);
     }
 
     @Override

@@ -90,7 +90,7 @@ public class ServerSpellBuildHandler implements ServerLivingEntityEvents.AfterDe
             }
 
             if (player.getMainHandStack().getItem().equals(ModItems.SPELL_ITEM)) {
-                player.getMainHandStack().setSubNbt("Color", NbtInt.of(SpellElement.calculateBaseColor(builder.getFullRecipe())));
+                player.getMainHandStack().setSubNbt("Color", NbtInt.of(SpellElement.calculateBaseColor(builder.getPendingElements())));
             }
 
             builder.addElement(aspect);

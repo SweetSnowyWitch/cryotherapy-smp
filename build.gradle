@@ -18,6 +18,7 @@ repositories {
         url = 'https://ladysnake.jfrog.io/artifactory/mods'
     }
     maven { url 'https://dl.cloudsmith.io/public/geckolib3/geckolib/maven/' }
+    maven { url 'https://maven.gegy.dev/' }
 }
 
 dependencies {
@@ -29,6 +30,10 @@ dependencies {
     modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
 
     modImplementation 'software.bernie.geckolib:geckolib-fabric-1.19:3.1.40'
+
+    modImplementation ("dev.lambdaurora:lambdynamiclights:2.2.0+${project.minecraft_version}") {
+        exclude group: 'com.terraformersmc', module: 'modmenu'
+    }
 
     modImplementation "dev.onyxstudios.cardinal-components-api:cardinal-components-entity:5.0.2"
     include "dev.onyxstudios.cardinal-components-api:cardinal-components-entity:5.0.2"

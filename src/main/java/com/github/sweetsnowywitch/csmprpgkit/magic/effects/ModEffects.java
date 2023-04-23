@@ -10,10 +10,12 @@ public class ModEffects {
     public static final SpellEffect POTION = new PotionEffect();
     public static final SpellEffect DAMAGE = new DamageEffect();
     public static final SpellEffect MUTE = new MuteEffect();
+    public static final SpellEffect FIRE = new FireEffect();
 
     public static void register() {
         Registry.register(ModRegistries.SPELL_EFFECTS, new Identifier(RPGKitMod.MOD_ID, "potion"), POTION);
         Registry.register(ModRegistries.SPELL_EFFECTS, new Identifier(RPGKitMod.MOD_ID, "damage"), DAMAGE);
         Registry.register(ModRegistries.SPELL_EFFECTS, new Identifier(RPGKitMod.MOD_ID, "mute"), MUTE);
+        Registry.register(ModRegistries.SPELL_EFFECTS, new Identifier(RPGKitMod.MOD_ID, "fire"), FIRE);
     }
 }

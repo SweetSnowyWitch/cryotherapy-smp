@@ -11,9 +11,13 @@ public class ModItems {
     public static final Item SPELL_ITEM = new SpellItem(new FabricItemSettings().maxCount(1));
     public static final Item CATALYST_BAG = new CatalystBagItem(new FabricItemSettings().maxCount(1));
 
+    public static final Item CHARGE = new Item(new FabricItemSettings());
+
     public static void register() {
         // Registry.register(Registries.ITEM, new Identifier(RPGKitMod.MOD_ID, "caster"), ITEM_CASTER);
         Registry.register(Registry.ITEM, new Identifier(RPGKitMod.MOD_ID, "spell"), SPELL_ITEM);
         Registry.register(Registry.ITEM, Identifier.of(RPGKitMod.MOD_ID, "catalyst_bag"), CATALYST_BAG);
+
+        Registry.register(Registry.ITEM, new Identifier(RPGKitMod.MOD_ID, "spell_charge"), CHARGE);
     }
 }

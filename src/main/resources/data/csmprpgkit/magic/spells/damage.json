@@ -5,7 +5,7 @@
   "effects": [
     {
       "type": "csmprpgkit:damage",
-      "damage_dealt": -100
+      "damage_dealt": 1
     }
   ]
 }

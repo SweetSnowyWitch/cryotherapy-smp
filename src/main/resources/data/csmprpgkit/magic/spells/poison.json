@@ -1,6 +1,6 @@
 {
   "recipe": [
-    {"aspect": "csmprpgkit:aer"},
+    {"aspect": "csmprpgkit:aqua"},
     {"aspect": "csmprpgkit:interitio"}
   ],
   "effects": [

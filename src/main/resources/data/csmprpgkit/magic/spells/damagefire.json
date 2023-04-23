@@ -1,0 +1,12 @@
+{
+  "recipe": [
+    {"aspect": "csmprpgkit:ignis"},
+    {"aspect": "csmprpgkit:interitio"}
+  ],
+  "effects": [
+    {
+      "type": "csmprpgkit:fire",
+      "fire_seconds": 10
+    }
+  ]
+}
