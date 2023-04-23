@@ -1,0 +1,19 @@
+{
+  "kind": "effect",
+  "order": 1,
+  "costs": {
+    "magicae": "7"
+  },
+  "generic_effects": [
+    {
+      "type": "csmprpgkit:damage",
+      "damage_dealt": 5
+    }
+  ],
+  "generic_reactions": [
+    {
+      "for_effect": "csmprpgkit:damage",
+      "damage_dealt": 3
+    }
+  ]
+}

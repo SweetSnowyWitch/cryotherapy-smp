@@ -1,0 +1,8 @@
+{
+  "kind": "effect",
+  "order": 4,
+  "costs": {
+    "magicae": "11"
+  },
+  "color": "ff6600"
+}

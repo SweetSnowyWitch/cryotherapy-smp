@@ -1,22 +1,32 @@
 {
   "schemaVersion": 1,
-  "id": "csmp",
+  "id": "csmprpgkit",
   "version": "${version}",
-  "name": "CryotherapySMP",
+  "name": "CSMP RPG Kit",
   "description": "",
   "authors": [],
   "contact": {
     "repo": "https://github.com/SweetSnowyWitch/cryotherapy-smp"
   },
   "license": "MIT",
-  "icon": "assets/csmp/icon.png",
+  "icon": "assets/csmprpgkit/icon.png",
   "environment": "*",
   "entrypoints": {
     "client": [
-      "csmp.CsmpClient"
+      "com.github.sweetsnowywitch.csmprpgkit.client.ClientRPGKitMod"
     ],
     "main": [
-      "csmp.CsmpMain"
+      "com.github.sweetsnowywitch.csmprpgkit.RPGKitMod"
+    ],
+    "cardinal-components": [
+      "com.github.sweetsnowywitch.csmprpgkit.components.ModComponents"
+    ]
+  },
+  "custom": {
+    "cardinal-components": [
+      "csmprpgkit:abilities",
+      "csmprpgkit:mana",
+      "csmprpgkit:class"
     ]
   },
   "mixins": [
@@ -25,6 +35,6 @@
   "depends": {
     "fabricloader": ">=0.14.13",
     "fabric": "*",
-    "minecraft": "1.19.3"
+    "minecraft": "1.19.2"
   }
 }

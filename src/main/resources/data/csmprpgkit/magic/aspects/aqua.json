@@ -1,0 +1,7 @@
+{
+  "kind": "effect",
+  "order": 2,
+  "costs": {
+    "magicae": "5"
+  }
+}
